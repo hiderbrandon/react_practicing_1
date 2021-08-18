@@ -3,10 +3,27 @@ import Table from './table'
 
 class App extends React.Component {
   render() {
+    const Characters = [
+
+      {
+        name:"hanier",
+        job :"coder" ,
+      },
+  
+      {
+        name:"brando",
+        job:"sinso",
+      },
+  
+      {
+        name:"juan",
+        job:"sexo",
+      },
+    ]
     return (
     
         <div className = 'container'>
-        <Table></Table>
+        <Table Charactersdata={Characters}></Table>
         </div>
       
     )
