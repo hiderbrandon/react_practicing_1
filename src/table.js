@@ -17,8 +17,8 @@ const TableHeader = ( ) => {
 
 const TableBody = (props) => {
    
-    let Characters = props.Charactersdata
-  
+    let Characters = props.CharactersData
+    const removeCharacter = props.removeCharacter
     return (
 
         <tbody>
@@ -26,10 +26,12 @@ const TableBody = (props) => {
             Characters.map((char , index)=>{
 
              return(
-              <tr key={index}>
-                <th>{char.name}</th>
-                <th>{char.job}</th>
-              </tr>
+               <tr key={index}>
+                 <td>{char.name}</td>
+                 <td>{char.job}</td>
+                 <td><button onClick= { ()=> removeCharacter(index)  } >erase</button></td>
+               </tr>
+              
 
              )}
             )
@@ -42,11 +44,12 @@ const TableBody = (props) => {
 
 class Table extends React.Component {
     render() {
-      const characters = this.props.Charactersdata 
+      const characters = this.props.CharactersData 
+      const removeCharacter = this.props.removeCharacter
         return (
           <table>
             <TableHeader/>
-            <TableBody Charactersdata={characters} />
+            <TableBody CharactersData={characters} removeCharacter={removeCharacter } />
             
           </table>
         )

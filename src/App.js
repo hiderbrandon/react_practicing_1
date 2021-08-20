@@ -2,30 +2,55 @@ import React from 'react'
 import Table from './table'
 
 class App extends React.Component {
-  render() {
-    const Characters = [
 
-      {
-        name:"hanier",
-        job :"coder" ,
-      },
-  
-      {
-        name:"brando",
-        job:"sinso",
-      },
-  
-      {
-        name:"juan",
-        job:"sexo",
-      },
-    ]
-    return (
+  constructor(props) {
+
+    super(props);
+
+    this.state = {
+
+      Characters : [
+        {
+          name:"hider",
+          job:"carnitas"
+        },
+        {
+          name:"fuam",
+          job:"paisa"
+        }
+
+      ]
+
+    }
+
+  }// constructor
+
+
+removeCharacter=( index )=>{
+
+  this.setState(
+    {
+      Characters:this.state.Characters.filter((Character , i ) => {
+
+        return i!==index
+
+      })
+    }
+  )
+
+}
+
+
+  render() {
     
-        <div className = 'container'>
-        <Table Charactersdata={Characters}></Table>
-        </div>
-      
+    let CharactersData = this.state.Characters
+
+    return (
+
+      <div className='container'>
+        <Table CharactersData={CharactersData} removeCharacter={this.removeCharacter } ></Table>
+      </div>
+
     )
   }
 }
