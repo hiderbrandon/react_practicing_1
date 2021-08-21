@@ -1,5 +1,5 @@
-# Simple Character list interactive reactapp
+# Simple Character's list interactive react app
 
-enjoy add and remove character from this list :)
+enjoy add and remove characters from this list :)
 
 
