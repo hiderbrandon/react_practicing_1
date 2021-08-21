@@ -1,5 +1,6 @@
 import React from 'react'
 import Table from './table'
+import Form from "./Form."
 
 class App extends React.Component {
 
@@ -9,17 +10,7 @@ class App extends React.Component {
 
     this.state = {
 
-      Characters : [
-        {
-          name:"hider",
-          job:"carnitas"
-        },
-        {
-          name:"fuam",
-          job:"paisa"
-        }
-
-      ]
+      Characters : []
 
     }
 
@@ -40,15 +31,22 @@ removeCharacter=( index )=>{
 
 }
 
+addCharacter = (character) => {
+  this.setState({Characters:[...this.state.Characters , character ]})
+}
 
   render() {
-    
+
     let CharactersData = this.state.Characters
 
     return (
 
       <div className='container'>
-        <Table CharactersData={CharactersData} removeCharacter={this.removeCharacter } ></Table>
+        <Table 
+        CharactersData={CharactersData} 
+        removeCharacter={this.removeCharacter } 
+        ></Table>
+        <Form addCharacter={this.addCharacter}></Form>
       </div>
 
     )

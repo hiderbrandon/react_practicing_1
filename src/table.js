@@ -49,8 +49,9 @@ class Table extends React.Component {
         return (
           <table>
             <TableHeader/>
-            <TableBody CharactersData={characters} removeCharacter={removeCharacter } />
-            
+            <TableBody 
+            CharactersData={characters} 
+            removeCharacter={removeCharacter } />
           </table>
         )
       }
